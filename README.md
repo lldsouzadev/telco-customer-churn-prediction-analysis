@@ -1,6 +1,6 @@
-# 📉 Projeto de Machine Learning: Previsão e Análise de Churn de Clientes (Telco)
+# 📉 Machine Learning: Previsão e Análise de Churn de Clientes
 
-## 🎯 Objetivo do Projeto
+## 🎯 Objetivo da Análise
 
 Desenvolver um modelo de Machine Learning capaz de prever quais clientes de uma empresa de telecomunicações estão em risco de cancelar o serviço (Churn). O foco é fornecer **insights de negócios** para ações de retenção.
 
@@ -19,7 +19,7 @@ Desenvolver um modelo de Machine Learning capaz de prever quais clientes de uma 
 
 ## 🛠️ Metodologia e Pipeline de Data Science
 
-O projeto seguiu as seguintes etapas principais:
+A análise seguiu as seguintes etapas principais:
 
 ### 1. Análise Exploratória de Dados (EDA)
 
@@ -39,28 +39,28 @@ O projeto seguiu as seguintes etapas principais:
 
 ---
 
-## 4. Como Executar o Projeto
+## 4. Como Executar a Análise
 
-Para rodar este projeto localmente, você precisará ter o **Miniconda/Anaconda** e o ambiente Python configurados.
+Para rodar esta análise localmente, você precisará ter o **Miniconda/Anaconda** e o ambiente Python configurados.
 
 ### Pré-requisitos
 
-O projeto requer as seguintes bibliotecas Python: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, e `seaborn`.
+A análise requer as seguintes bibliotecas Python: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, e `seaborn`.
 
 ### Passos de Execução
 
 1.  **Crie e Ative o Ambiente:**
-    Se você ainda não tem o ambiente `portifolio`, crie-o no seu terminal (Anaconda Prompt):
+    Se você ainda não tem o ambiente `churnprediction`, crie-o no seu terminal (Anaconda Prompt):
     ```bash
-    conda create --name portifolio python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y
+    conda create --name churnprediction python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y
     ```
     Em seguida, ative-o:
     ```bash
-    conda activate portifolio
+    conda activate churnprediction
     ```
 
 2.  **Baixe o Código:**
-    Clone este repositório do GitHub ou baixe os arquivos diretamente e navegue até a pasta do projeto.
+    Clone este repositório do GitHub ou baixe os arquivos diretamente e navegue até a pasta.
     ```bash
     cd /caminho/para/pasta-do-projeto
     ```
@@ -88,5 +88,6 @@ Apesar de o modelo ter uma boa acurácia geral, a prioridade para o negócio é 
 
 * **Linguagem:** Python
 * **Bibliotecas:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
+* **Dados:** `telco costumer churn prediction`, [Telco Costumer Churn no Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 * **Ambiente:** Jupyter Notebook
 * **Assistência:** O código foi desenvolvido com assistência de IA para acelerar o desenvolvimento, focando o tempo do analista na EDA e na otimização do modelo.
