@@ -39,7 +39,43 @@ O projeto seguiu as seguintes etapas principais:
 
 ---
 
-## 📈 Conclusão e Próximos Passos
+## 4. Como Executar o Projeto
+
+Para rodar este projeto localmente, você precisará ter o **Miniconda/Anaconda** e o ambiente Python configurados.
+
+### Pré-requisitos
+
+O projeto requer as seguintes bibliotecas Python: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, e `seaborn`.
+
+### Passos de Execução
+
+1.  **Crie e Ative o Ambiente:**
+    Se você ainda não tem o ambiente `portifolio`, crie-o no seu terminal (Anaconda Prompt):
+    ```bash
+    conda create --name portifolio python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y
+    ```
+    Em seguida, ative-o:
+    ```bash
+    conda activate portifolio
+    ```
+
+2.  **Baixe o Código:**
+    Clone este repositório do GitHub ou baixe os arquivos diretamente e navegue até a pasta do projeto.
+    ```bash
+    cd /caminho/para/pasta-do-projeto
+    ```
+
+3.  **Inicie o Jupyter Notebook:**
+    Execute o comando para iniciar o servidor Jupyter:
+    ```bash
+    jupyter notebook
+    ```
+4.  **Execute o Notebook:**
+    No navegador, clique no arquivo `Main_Novo.ipynb` e execute todas as células em sequência (usando `Cell -> Run All` ou `Shift + Enter` célula por célula).
+
+---
+
+## 5. Conclusão e Próximos Passos
 
 Apesar de o modelo ter uma boa acurácia geral, a prioridade para o negócio é aumentar a capacidade de **identificar corretamente** os clientes de alto risco (aumentar o *Recall*).
 
