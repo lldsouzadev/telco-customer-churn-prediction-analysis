@@ -25,19 +25,25 @@ O primeiro passo foi entender a dimensão do problema e os fatores que levam ao 
 
 A variável alvo está significativamente desbalanceada, um desafio comum em problemas de Churn.
 
-![Distribuição de Churn](grafico/1_churn_distribuicao.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/lldsouzadev/telco-customer-churn-prediction-analysis/main/grafico/1_churn_distribuicao.png" alt="Distribuição">
+</p>
 
 ### 2. Contrato: O Maior Fator de Risco
 
 O gráfico abaixo mostra claramente que clientes com contrato **Mês a Mês** são desproporcionalmente mais propensos a cancelar.
 
-![Churn por Contrato](grafico/2_churn_por_contrato.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/lldsouzadev/telco-customer-churn-prediction-analysis/main/grafico/2_churn_por_contrato.png" alt="Contrato">
+</p>
 
 ### 3. Lealdade (Tenure): Clientes Novos são Mais Frágeis
 
 Clientes que cancelaram têm uma mediana de **meses de lealdade (Tenure)** significativamente menor. A retenção deve focar nos clientes recém-adquiridos.
 
-![Lealdade (Tenure) vs. Churn](grafico/3_tenure_vs_churn.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/lldsouzadev/telco-customer-churn-prediction-analysis/main/grafico/3_tenure_vs_churn.png" alt="Lealdade">
+</p>
 
 ---
 
@@ -52,7 +58,9 @@ A análise utilizou Regressão Logística, otimizada com um Pipeline para garant
 
 A matriz mostra a performance do modelo no conjunto de teste, revelando os acertos (True Positives) e falhas (False Negatives).
 
-![Matriz de Confusão do Modelo Otimizado](grafico/4_matriz_confusao.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/lldsouzadev/telco-customer-churn-prediction-analysis/main/grafico/4_matriz_confusao.png" alt="Matriz de Confusão">
+</p>
 
 **Interpretação da Matriz:**
 * **745 Acertos Churn (TP):** O modelo previu corretamente que 745 clientes iriam cancelar.
