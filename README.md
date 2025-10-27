@@ -68,12 +68,33 @@ A matriz mostra a performance do modelo no conjunto de teste, revelando os acert
 
 ---
 
-## 🚀 Conclusão e Ação Estratégica
+## 🚀 Conclusão e Plano de Ação Estratégica
 
-Apesar de o modelo ter uma boa acurácia geral, a prioridade para o negócio é aumentar a capacidade de **identificar corretamente** os clientes de alto risco (aumentar o *Recall*).
+Esta análise de Churn (80.20% de acurácia) nos permite traçar um plano de ação imediato focado em dois grupos de clientes de **alto risco**:
 
-* **Ação Imediata:** A empresa deve usar o modelo para priorizar clientes classificados como Churn=1 e focar as campanhas de retenção (ex: descontos, upgrades) nesses $\sim 57\%$ de clientes que o modelo previu corretamente.
-* **Próxima Etapa:** Experimentar modelos de Ensemble (como **Random Forest** ou **XGBoost**) e técnicas de **Balanceamento de Classes (SMOTE)** para melhorar o Recall e o F1-Score da classe Churn.
+### 1. Foco no Fator Contrato (Risco Imediato)
+
+**O Insight:** Clientes com contratos **Mês a Mês** são o maior vetor de Churn. Eles demonstram falta de lealdade e alta flexibilidade para migrar para a concorrência.
+
+**Ação Sugerida:**
+* **Target:** Criar campanhas de retenção agressivas, priorizando clientes Mês a Mês.
+* **Implementação:** Oferecer incentivos claros (ex: **desconto de 15%** nos próximos 6 meses ou **upgrade gratuito** de banda larga) para migrá-los para contratos de 12 ou 24 meses.
+
+### 2. Foco no Fator Lealdade (Risco de Longo Prazo)
+
+**O Insight:** Clientes **novos** (baixo *Tenure*) estão cancelando em uma taxa muito maior do que os veteranos. A empresa está falhando na fase inicial de experiência do cliente.
+
+**Ação Sugerida:**
+* **Target:** Estabelecer um programa de "Boas-vindas" focado nos primeiros 90 dias de contrato.
+* **Implementação:** Aumentar o contato proativo (e não reativo) do suporte técnico e da gerência de contas para garantir que a instalação e a experiência inicial sejam impecáveis, reduzindo a chance de Churn precoce.
+
+---
+
+## 📈 Próximos Passos (Aperfeiçoamento Técnico)
+
+Apesar de o modelo identificar corretamente 57% dos clientes que realmente cancelam (Recall), a prioridade técnica é elevar essa taxa para que a empresa possa resgatar **mais clientes em risco**.
+
+* **Aperfeiçoamento do Modelo:** Recomenda-se a exploração de modelos de Ensemble (como **Random Forest** ou **XGBoost**) e o uso de técnicas de **Balanceamento de Classes (SMOTE)** para melhorar especificamente o Recall e a precisão na identificação dos clientes que irão cancelar.
 
 ---
 
