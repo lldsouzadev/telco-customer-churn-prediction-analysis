@@ -1,4 +1,4 @@
-# 📉 Machine Learning: Previsão e Análise de Churn de Clientes
+# 📉 Análise e Previsão de Churn de Clientes (Telecomunicações)
 
 ## 🎯 Objetivo da Análise
 
@@ -17,65 +17,50 @@ Desenvolver um modelo de Machine Learning capaz de prever quais clientes de uma 
 
 ---
 
-## 🛠️ Metodologia e Pipeline de Data Science
+## 📊 Análise Exploratória e Visualização (Os Drivers do Churn)
 
-A análise seguiu as seguintes etapas principais:
+O primeiro passo foi entender a dimensão do problema e os fatores que levam ao cancelamento.
 
-### 1. Análise Exploratória de Dados (EDA)
+### 1. Desbalanceamento e Distribuição da Variável Alvo
 
-* **Identificação do Desbalanceamento:** A variável alvo (`Churn Value`) apresentou uma distribuição desbalanceada de **73.5%** (Não Churn) vs. **26.5%** (Churn).
-* **Insights de Churn:** Visualização demonstrou que o **Contrato Mês a Mês** e um **Tempo de Lealdade (`Tenure Months`) menor** são os maiores indicadores de cancelamento.
+A variável alvo está significativamente desbalanceada, um desafio comum em problemas de Churn.
 
-### 2. Limpeza e Pré-processamento de Dados
+![Distribuição de Churn](graficos_portifolio/1_churn_distribuicao.png)
 
-* **Tratamento de Tipos:** Conversão das colunas `Monthly Charges` e `Total Charges` (originalmente `object`) para `float64`, corrigindo a formatação decimal (vírgula para ponto) e tratando valores nulos.
-* **Redução de Dimensionalidade:** Remoção de 11 colunas redundantes ou não preditivas (ex: `CustomerID`, dados geográficos e colunas duplicadas como `Churn Label`).
-* **Codificação Categórica:** Aplicação de **One-Hot Encoding** (via `pd.get_dummies`) em 16 colunas de texto (`object`) para que o modelo pudesse processá-las. O número de features subiu para 33.
+### 2. Contrato: O Maior Fator de Risco
 
-### 3. Modelagem e Otimização (Machine Learning)
+O gráfico abaixo mostra claramente que clientes com contrato **Mês a Mês** são desproporcionalmente mais propensos a cancelar.
 
-* **Modelo Base:** Regressão Logística, um modelo robusto e rápido para classificação binária.
-* **Otimização e Escalonamento:** Foi implementado um **Pipeline** com **StandardScaler** para padronizar as features e resolver o `ConvergenceWarning`. O aumento do `max_iter` para 5000 garantiu a estabilidade do modelo otimizado.
+![Churn por Contrato](graficos_portifolio/2_churn_por_contrato.png)
 
----
+### 3. Lealdade (Tenure): Clientes Novos são Mais Frágeis
 
-## 4. Como Executar a Análise
+Clientes que cancelaram têm uma mediana de **meses de lealdade (Tenure)** significativamente menor. A retenção deve focar nos clientes recém-adquiridos.
 
-Para rodar esta análise localmente, você precisará ter o **Miniconda/Anaconda** e o ambiente Python configurados.
-
-### Pré-requisitos
-
-A análise requer as seguintes bibliotecas Python: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, e `seaborn`.
-
-### Passos de Execução
-
-1.  **Crie e Ative o Ambiente:**
-    Se você ainda não tem o ambiente `churnprediction`, crie-o no seu terminal (Anaconda Prompt):
-    ```bash
-    conda create --name churnprediction python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y
-    ```
-    Em seguida, ative-o:
-    ```bash
-    conda activate churnprediction
-    ```
-
-2.  **Baixe o Código:**
-    Clone este repositório do GitHub ou baixe os arquivos diretamente e navegue até a pasta.
-    ```bash
-    cd /caminho/para/pasta-do-projeto
-    ```
-
-3.  **Inicie o Jupyter Notebook:**
-    Execute o comando para iniciar o servidor Jupyter:
-    ```bash
-    jupyter notebook
-    ```
-4.  **Execute o Notebook:**
-    No navegador, clique no arquivo `Main_Novo.ipynb` e execute todas as células em sequência (usando `Cell -> Run All` ou `Shift + Enter` célula por célula).
+![Lealdade (Tenure) vs. Churn](graficos_portifolio/3_tenure_vs_churn.png)
 
 ---
 
-## 5. Conclusão e Próximos Passos
+## 🛠️ Metodologia e Pipeline de Machine Learning
+
+A análise utilizou Regressão Logística, otimizada com um Pipeline para garantir a correta aplicação do **Escalonamento (StandardScaler)** e a robustez dos dados.
+
+* **Pré-processamento:** Tratamento do tipo de dado (corrigindo vírgula para ponto em colunas financeiras) e One-Hot Encoding em 16 colunas categóricas.
+* **Otimização:** Uso do Pipeline e `max_iter=5000` para resolver o `ConvergenceWarning`.
+
+### Avaliação do Modelo: Matriz de Confusão
+
+A matriz mostra a performance do modelo no conjunto de teste, revelando os acertos (True Positives) e falhas (False Negatives).
+
+![Matriz de Confusão do Modelo Otimizado](graficos_portifolio/4_matriz_confusao.png)
+
+**Interpretação da Matriz:**
+* **745 Acertos Churn (TP):** O modelo previu corretamente que 745 clientes iriam cancelar.
+* **573 Erros Churn (FN):** O modelo *perdeu* 573 clientes que cancelaram (False Negatives), indicando a margem para aumentar o Recall.
+
+---
+
+## 🚀 Conclusão e Ação Estratégica
 
 Apesar de o modelo ter uma boa acurácia geral, a prioridade para o negócio é aumentar a capacidade de **identificar corretamente** os clientes de alto risco (aumentar o *Recall*).
 
@@ -84,10 +69,14 @@ Apesar de o modelo ter uma boa acurácia geral, a prioridade para o negócio é 
 
 ---
 
-## 💻 Ferramentas Utilizadas
+## 💻 Recursos e Execução
 
-* **Linguagem:** Python
-* **Bibliotecas:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
-* **Dados:** `telco costumer churn prediction`, [Telco Costumer Churn no Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-* **Ambiente:** Jupyter Notebook
-* **Assistência:** O código foi desenvolvido com assistência de IA para acelerar o desenvolvimento, focando o tempo do analista na EDA e na otimização do modelo.
+### Fonte de Dados
+* [Telco Customer Churn (IBM) - Kaggle](https://www.kaggle.com/datasets/denisexpsito/telco-customer-churn-ibm)
+
+### Execução Local (Instalação)
+1. Crie e ative o ambiente (`churnprediction`) no Anaconda Prompt:
+   `conda create --name churnprediction python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y`
+   `conda activate churnprediction`
+2. Navegue até a pasta do projeto e inicie o Jupyter: `jupyter notebook`
+3. Execute todas as células do `Main_Novo.ipynb`.
