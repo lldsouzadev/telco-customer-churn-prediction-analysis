@@ -25,19 +25,19 @@ O primeiro passo foi entender a dimensão do problema e os fatores que levam ao 
 
 A variável alvo está significativamente desbalanceada, um desafio comum em problemas de Churn.
 
-![Distribuição de Churn](graficos/1_churn_distribuicao.png)
+![Distribuição de Churn](grafico/1_churn_distribuicao.png)
 
 ### 2. Contrato: O Maior Fator de Risco
 
 O gráfico abaixo mostra claramente que clientes com contrato **Mês a Mês** são desproporcionalmente mais propensos a cancelar.
 
-![Churn por Contrato](graficos/2_churn_por_contrato.png)
+![Churn por Contrato](grafico/2_churn_por_contrato.png)
 
 ### 3. Lealdade (Tenure): Clientes Novos são Mais Frágeis
 
 Clientes que cancelaram têm uma mediana de **meses de lealdade (Tenure)** significativamente menor. A retenção deve focar nos clientes recém-adquiridos.
 
-![Lealdade (Tenure) vs. Churn](graficos/3_tenure_vs_churn.png)
+![Lealdade (Tenure) vs. Churn](grafico/3_tenure_vs_churn.png)
 
 ---
 
@@ -52,7 +52,7 @@ A análise utilizou Regressão Logística, otimizada com um Pipeline para garant
 
 A matriz mostra a performance do modelo no conjunto de teste, revelando os acertos (True Positives) e falhas (False Negatives).
 
-![Matriz de Confusão do Modelo Otimizado](graficos/4_matriz_confusao.png)
+![Matriz de Confusão do Modelo Otimizado](grafico/4_matriz_confusao.png)
 
 **Interpretação da Matriz:**
 * **745 Acertos Churn (TP):** O modelo previu corretamente que 745 clientes iriam cancelar.
