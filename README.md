@@ -63,8 +63,8 @@ A matriz mostra a performance do modelo no conjunto de teste, revelando os acert
 </p>
 
 **Interpretação da Matriz:**
-* **745 Acertos Churn (TP):** O modelo previu corretamente que 745 clientes iriam cancelar.
-* **573 Erros Churn (FN):** O modelo *perdeu* 573 clientes que cancelaram (False Negatives), indicando a margem para aumentar o Recall.
+* **212 Acertos Churn (TP):** O modelo previu corretamente que 212 clientes iriam cancelar (Verdadeiros Positivos).
+* **162 Erros Churn (FN):** O modelo perdeu 162 clientes que cancelaram (Falsos Negativos), indicando a margem para aumentar o Recall.
 
 ---
 
