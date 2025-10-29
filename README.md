@@ -103,6 +103,18 @@ Apesar de o modelo identificar corretamente 57% dos clientes que realmente cance
 ### Fonte de Dados
 * [Telco Customer Churn (IBM) - Kaggle](https://www.kaggle.com/datasets/denisexpsito/telco-customer-churn-ibm)
 
+### Lista as principais tecnologias e bibliotecas
+
+| Categoria | Ferramenta / Tecnologia | Descrição / Uso no Projeto |
+| :--- | :--- | :--- |
+| **Aprendizado de Máquina (IA)** | **Modelo de Classificação** | Utilizado para prever a probabilidade de um cliente cancelar (*Churn*), com o desempenho avaliado pela Matriz de Confusão. |
+| **Ambiente de Desenvolvimento** | **Jupyter Notebook** | Ambiente interativo para desenvolver, documentar e executar o código do projeto (`Main_Novo.ipynb`). |
+| **Linguagem de Programação** | **Python 3.9** | Linguagem principal para o desenvolvimento do modelo e a manipulação dos dados. |
+| **Manipulação e Análise de Dados** | **Pandas** | Biblioteca essencial para carregar, limpar e transformar o *dataset* do Telco Customer Churn. |
+| **Computação Numérica** | **NumPy** | Utilizada para realizar operações numéricas eficientes e manipulação de *arrays* de dados. |
+| **Modelagem e Métricas** | **Scikit-learn** (`scikit-learn`) | Framework padrão para treinamento do modelo de classificação e cálculo de métricas de avaliação (ex: Matriz de Confusão e Recall). |
+| **Visualização de Dados** | **Matplotlib** e **Seaborn** | Bibliotecas para a criação de gráficos estatísticos e visualizações, incluindo a Matriz de Confusão. |
+
 ### Execução Local (Instalação)
 1. Crie e ative o ambiente (`churnprediction`) no Anaconda Prompt:
    `conda create --name churnprediction python=3.9 pandas numpy scikit-learn matplotlib seaborn jupyter -y`
